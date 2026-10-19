@@ -1,0 +1,25 @@
+{
+    "name": "rmmz-game",
+    "main": "index.html",
+    "chromium-args": "--force-color-profile=srgb --disable-devtools",
+    "window": {
+        "title": "Environmental Heroes",
+        "width": 816,
+        "height": 624,
+        "position": "center",
+        "icon": "icon/icon.png"
+    },
+    "scripts": {
+        "prepare:www": "node scripts/prepare_www.js",
+        "compress": "node scripts/optimize_assets.js",
+        "icons": "powershell -ExecutionPolicy Bypass -File scripts/generate_icons.ps1",
+        "sync": "npm run prepare:www && npx cap copy android",
+        "build:apk": "node scripts/build_apk.js",
+        "install:apk": "adb install -r EnvironmentalHeroes.apk"
+    },
+    "dependencies": {
+        "@capacitor/android": "6.2.2",
+        "@capacitor/cli": "6.2.2",
+        "@capacitor/core": "6.2.2"
+    }
+}

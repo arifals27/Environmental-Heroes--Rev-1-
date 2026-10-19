@@ -1,0 +1,14 @@
+{
+  "appId": "com.environmentalheroes.game",
+  "appName": "Environmental Heroes",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "backgroundColor": "#000000",
+    "allowMixedContent": true,
+    "webContentsDebuggingEnabled": true
+  }
+}

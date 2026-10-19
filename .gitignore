@@ -1,0 +1,26 @@
+# Node dependencies
+node_modules/
+package-lock.json
+
+# Web build output (generated from game/ folder)
+www/
+
+# Android build outputs & local machine configs
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/*.iml
+android/app/*.iml
+android/.idea/
+
+# Android generated APKs / AABs
+*.apk
+*.aab
+
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
