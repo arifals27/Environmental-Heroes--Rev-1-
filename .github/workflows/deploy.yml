@@ -24,8 +24,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Add .nojekyll (mencegah Jekyll memblokir asset RPG Maker)
-        run: touch game/.nojekyll
+      - name: Add .nojekyll and copy CNAME
+        run: |
+          touch game/.nojekyll
+          [ -f CNAME ] && cp CNAME game/ || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

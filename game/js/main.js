@@ -49,8 +49,13 @@ class Main {
     }
 
     testXhr() {
+        if (window.location.protocol.startsWith("http") || window.location.protocol === "capacitor:") {
+            this.xhrSucceeded = true;
+            return;
+        }
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", document.currentScript.src);
+        const src = (document.currentScript && document.currentScript.src) ? document.currentScript.src : "js/main.js";
+        xhr.open("GET", src);
         xhr.onload = () => (this.xhrSucceeded = true);
         xhr.send();
     }
